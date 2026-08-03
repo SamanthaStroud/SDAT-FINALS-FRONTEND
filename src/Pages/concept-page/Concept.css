@@ -1,0 +1,705 @@
+/* ── CONCEPT PAGE ── */
+
+.cp-page {
+  background-color: #0d0120;
+  border-radius: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── BREADCRUMB ── */
+
+.cp-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem 5rem;
+  border-bottom: 1px solid rgba(167, 139, 250, 0.07);
+}
+
+.cp-crumb {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #a78bfa;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.cp-crumb:hover {
+  color: #c4b5fd;
+}
+
+.cp-crumb--active {
+  color: #fff;
+  cursor: default;
+}
+
+.cp-crumb-sep {
+  color: #3d1a6e;
+  font-size: 0.85rem;
+}
+
+/* ── HERO ── */
+
+.cp-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 3.5rem 5rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(167, 139, 250, 0.07);
+}
+
+.cp-hero::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -5%;
+  width: 50%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse,
+    var(--concept-accent, rgba(124, 58, 237, 0.1)) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.cp-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  padding: 0.35rem 0.9rem;
+  border-radius: 2rem;
+  border: 1px solid;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.cp-concept-title {
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.cp-concept-simple {
+  color: #9d7ac9;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 680px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── AT A GLANCE — horizontal cards ── */
+
+.cp-glance-section {
+  padding: 2rem 5rem 2.5rem;
+  border-bottom: 1px solid rgba(167, 139, 250, 0.07);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.cp-glance-header {
+  color: #6b4fa0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+}
+
+.cp-glance-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.cp-glance-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(167, 139, 250, 0.1);
+  border-top: 2px solid currentColor;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.cp-glance-card-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: inherit;
+  line-height: 1.3;
+}
+
+.cp-glance-card-detail {
+  font-size: 0.78rem;
+  color: #7c5db7;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ── SHARED SECTION STYLES ── */
+
+.cp-section {
+  padding: 3.5rem 5rem;
+  border-top: 1px solid rgba(167, 139, 250, 0.07);
+}
+
+.cp-section--alt {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.cp-section-title {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* ── TECHNICAL EXPLANATION ── */
+
+.cp-technical-box {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(167, 139, 250, 0.12);
+  border-left: 3px solid var(--concept-color, #a78bfa);
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
+}
+
+.cp-technical-box p {
+  color: #9d7ac9;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── VISUAL DIAGRAM ── */
+
+.cp-diagram-window {
+  background: #06000f;
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cp-diagram-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.08);
+}
+
+.cp-diagram-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cp-diagram-filename {
+  color: #4a3570;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  margin-left: 0.25rem;
+}
+
+.cp-diagram {
+  margin: 0;
+  padding: 2rem 2rem 1.5rem;
+  overflow-x: auto;
+  color: #a78bfa;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  white-space: pre;
+  display: block;
+}
+
+/* ── COMMON MISTAKES ── */
+
+.cp-mistakes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cp-mistake-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: rgba(244, 114, 182, 0.05);
+  border: 1px solid rgba(244, 114, 182, 0.15);
+  border-radius: 1rem;
+  padding: 1.5rem 1.75rem;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.cp-mistake-card:hover {
+  border-color: rgba(244, 114, 182, 0.3);
+  background: rgba(244, 114, 182, 0.08);
+}
+
+.cp-mistake-num {
+  color: rgba(244, 114, 182, 0.45);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  flex-shrink: 0;
+  font-family: "Courier New", monospace;
+  min-width: 2.5rem;
+}
+
+.cp-mistake-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cp-mistake-title {
+  color: #f9a8d4;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cp-mistake-desc {
+  color: #9d7ac9;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.cp-mistake-fix {
+  color: #6ee7b7;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin: 0.35rem 0 0;
+}
+
+/* ── WHY THIS MATTERS ── */
+
+.cp-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.cp-why-card {
+  background: rgba(52, 211, 153, 0.05);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cp-why-card:hover {
+  border-color: rgba(52, 211, 153, 0.32);
+  background: rgba(52, 211, 153, 0.1);
+  transform: translateY(-3px);
+}
+
+.cp-why-icon {
+  font-size: 1.75rem;
+  color: #34d399;
+  line-height: 1;
+}
+
+.cp-why-title {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cp-why-desc {
+  color: #7c5db7;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── CODE EXAMPLES ── */
+
+.cp-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.cp-example-label {
+  color: #6b4fa0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+
+.cp-code-window {
+  background: #06000f;
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cp-code-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.08);
+}
+
+.cp-code-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cp-code-filename {
+  color: #4a3570;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  margin-left: 0.25rem;
+}
+
+.cp-code-body {
+  margin: 0;
+  padding: 1.5rem 1.75rem;
+  overflow-x: auto;
+}
+
+.cp-code-body code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+  white-space: pre;
+  display: block;
+}
+
+/* ── MINI CHALLENGE ── */
+
+.cp-challenge-box {
+  background: rgba(251, 191, 36, 0.05);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cp-challenge-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.3rem 0.85rem;
+  border-radius: 2rem;
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: #fcd34d;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cp-challenge-title {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.cp-challenge-desc {
+  color: #9d7ac9;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 720px;
+}
+
+.cp-hints {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(251, 191, 36, 0.2);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.cp-hints-label {
+  color: #6b4fa0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+
+.cp-hints-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cp-hints-list li {
+  color: #7c5db7;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.cp-hints-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: rgba(251, 191, 36, 0.5);
+  font-size: 0.8rem;
+}
+
+/* ── NAVIGATION ROW ── */
+
+.cp-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 5rem 4rem;
+  gap: 1rem;
+}
+
+.cp-nav-btn {
+  padding: 0.6rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  background: rgba(124, 58, 237, 0.08);
+  color: #a78bfa;
+  font-family: Poppins, system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cp-nav-btn:hover {
+  background: rgba(124, 58, 237, 0.18);
+  border-color: rgba(167, 139, 250, 0.4);
+  color: #c4b5fd;
+}
+
+.cp-nav-btn--mid {
+  border-color: rgba(167, 139, 250, 0.15);
+  background: transparent;
+  color: #6b4fa0;
+  font-size: 0.82rem;
+}
+
+.cp-nav-btn--mid:hover {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: rgba(167, 139, 250, 0.3);
+  color: #a78bfa;
+}
+
+.cp-next-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  background: linear-gradient(135deg, var(--concept-color, #7c3aed), #5b21b6);
+  color: #fff;
+  font-family: Poppins, system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease;
+}
+
+.cp-next-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.cp-back-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  color: #fff;
+  font-family: Poppins, system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease;
+}
+
+.cp-back-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* ── NOT FOUND ── */
+
+.cp-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex: 1;
+  color: #7c5db7;
+  padding: 5rem 2rem;
+}
+
+.cp-not-found h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* ── RESPONSIVE — Laptop (≤ 1024px) ── */
+
+@media (max-width: 1024px) {
+  .cp-breadcrumb,
+  .cp-hero,
+  .cp-glance-section,
+  .cp-section,
+  .cp-nav-row {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* ── RESPONSIVE — Tablet (≤ 768px) ── */
+
+@media (max-width: 768px) {
+  .cp-breadcrumb,
+  .cp-hero,
+  .cp-glance-section,
+  .cp-section,
+  .cp-nav-row {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .cp-glance-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cp-why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── RESPONSIVE — Mobile (≤ 480px) ── */
+
+@media (max-width: 480px) {
+  .cp-page {
+    border-radius: 0.5rem;
+  }
+
+  .cp-breadcrumb,
+  .cp-hero,
+  .cp-glance-section,
+  .cp-section,
+  .cp-nav-row {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .cp-hero {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .cp-glance-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cp-mistake-card {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cp-nav-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cp-nav-btn,
+  .cp-next-btn,
+  .cp-back-btn {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.cp-hero-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.cp-add-note-btn {
+  background: transparent;
+  border: 1px solid;
+  border-radius: 0.6rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.cp-add-note-btn:hover {
+  opacity: 0.8;
+}
